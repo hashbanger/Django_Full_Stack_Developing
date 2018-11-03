@@ -1,0 +1,12 @@
+li{
+    color: red;
+}
+/* The specific class ovverides general rule! */
+.topitem{
+    color: royalblue;
+}
+
+#second{
+    color: green;
+    border: 5px dotted black;
+}
