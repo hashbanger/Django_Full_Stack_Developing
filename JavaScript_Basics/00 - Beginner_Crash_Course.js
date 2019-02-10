@@ -1,4 +1,5 @@
 // ## CRASH COURSE FOR BEGINNERS
+// Prashant Brahmbhatt (https://www.github.com/hashbanger)
 
 var number  = 5 // in line comment
 
@@ -731,6 +732,87 @@ function checkScope(){
     "use strict";
     var i = "function scope";
     if (true){
-        let i = "block scope"
+        i = "block scope";
+        console.log("Block Scope i is: ", i);
     }
+    console.log("Function Scope i is: ", i);
+    return i;
 }
+console.log(checkScope()); // outs both as block scope
+
+function checkScope(){
+    "use strict";
+    let i = "function scope"; // using let
+    if (true){
+        let i = "block scope";
+        console.log("Block Scope i is: ", i);
+    }
+    console.log("Function Scope i is: ", i);
+    return i;
+}
+console.log(checkScope()); // outs block scope and function scope
+
+// Declaring a Read Only Variables
+var sentence = "String is cool";
+sentence = "String is very cool";
+
+const sent = "String cool"
+sent = "Strng very coool" // throws error
+
+// Mutate an array declared with const
+const s = [5, 7, 2];
+s[0] = 1
+s.push(10);
+console.log(s);
+
+// Prevent object mutation
+function freezeObj(){
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+ Object.freeze(MATH_CONSTANTS);
+
+    try{
+        MATH_CONSTANTS.PI  = 99;
+    }
+    catch(ex){
+        console.log("Exception Caught\n",ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj();
+console.log(PI)
+
+// USING ARROW FUNCTIONS FOR ANONYMOUS FUNCTIONS ------------------------------------------------
+//if we are to declare such a function
+var magic = function(){
+    return new Date();
+};
+// then a better way for that is using arrows
+var magic = () => {
+    return new Date();
+};
+//even better way
+const magic = () => new Date();
+console.log(magic());
+
+// Arrow functions with parameters
+var myConcat = (arr1, arr2) => arr1.concat(arr2);
+console.log(myConcat([1, 2], [3, 4, 5]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////// de nada!
