@@ -569,3 +569,168 @@ console.log(checkObj("hello"));
 
 // Manipulating Complex Objects
 
+var myPlants = [
+    {
+        type: "flowers",
+        list: ['rose',
+                'tulip',
+                'daffodil'
+                ]
+    },
+    {
+        type: "trees",
+        list: [
+                "fir",
+                "pine",
+                "birch"
+        ]
+    }
+];
+
+var secondTree = myPlants[1].list[1];
+console.log(secondTree);
+
+// ITERATIONS WITH LOOPS ---------------------------------------------------
+// while loops
+
+var myArray = [];
+i = 0;
+while (i < 5){
+    myArray.push(i);
+    i++;
+}
+console.log(myArray);
+
+// for loops
+for (var i = 0; i < 5; i++){
+    ourArray.push(i); 
+}
+
+var myArray = [];
+
+for (var i = 1; i < 6; i++){
+    myArray.push(i);
+}
+console.log(myArray);
+
+// Iterating for odd numbers
+var ourArray = [];
+for (var i =0 ; i < 10; i+=2){
+    ourArray.push(i);
+}
+console.log(ourArray);
+
+// Decrementing iteration
+var ourArray = [];
+for (var i = 10 ; i > 0; i-= 2){
+    ourArray.push(i);
+}
+console.log(ourArray);
+
+var myArray = [1, 2, 3, 4, 5];
+total = 0
+for (var i = 0; i <myArray.length; i++)
+{
+    total += myArray[i];
+}
+console.log(total);
+
+// Nested
+function multiplyAll(arr){
+    var product = 1;
+    for (var i = 0; i < arr.length; i++){
+        for (var j = 0; j < arr[i].length; j++)
+            {
+                product *= arr[i][j];
+            }
+    }
+    return product;
+}
+console.log(multiplyAll([[1,2],[3,4],[5,6]]))
+
+// Do While Loops
+
+myArr = [];
+i = 10;
+do{ 
+    myArr.push(i);
+    i++;
+}
+while(i < 5)
+
+console.log(i, myArr);
+
+// GENERATE RANDOM NUMBERS
+// Fractions
+function randomFunction(){
+
+    return Math.random(); // between 0 and 1
+}
+console.log(randomFunction());
+
+// Random Whole number
+var randomBtw0and19 = Math.floor(Math.random() * 20)
+function randomWholeNum(){
+    return Math.floor(Math.random() * 10);
+}
+console.log(randomWholeNum())
+
+// Generate whole numbers within a range
+function ourRandomRange(ourMin, ourMax){
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+console.log(ourRandomRange(1, 9));
+
+// USING THE PARSE INT FUNC --------------------------------------------------------
+function convertToInteger(str){
+    return parseInt(str);
+}
+
+console.log(convertToInteger("56"));
+
+// using with a radix
+function convertToInteger(str){
+    return parseInt(str, 2);
+}
+console.log(convertToInteger("10011"));
+
+// TERNARY OPERATORS -------------------------------------------------------------------------
+
+function checkEqual(a, b){
+    return a === b ? true: false;
+    // or this could be done using simply
+    // return a ===b;
+}
+
+// Using multiple conditionals
+function checkSign(num){
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+console.log(checkSign(-10));
+
+// DIFF BTW VAR AND LET ------------------------------------------------------------------
+
+// LET doesn't allow any variable declared two times in the same scope
+// but we can reassign
+
+let catName = "Quincy";
+let catName = "Beau" // throws error
+
+let catName = "Quincy";
+catName = "Beau" // fine
+
+// 'use strict' mode
+// To catch coding mistakes
+// add at the top of the script like "use strict";
+
+// SCOPING ---------------------------------------------------------------------
+// var allows the variable to become global and local inside a function
+// let makes the variable local to the scope it is declared in
+
+function checkScope(){
+    "use strict";
+    var i = "function scope";
+    if (true){
+        let i = "block scope"
+    }
+}
