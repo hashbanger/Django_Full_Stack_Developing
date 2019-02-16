@@ -55,3 +55,50 @@ return bar;
 }
 var x = foo();
 x();
+
+
+function foo(){
+var	a	=	2;
+function bar() {
+    console.log( a );
+}
+return	bar;
+}
+var	baz	=	foo();
+baz();	//	2	--	Whoa,	closure	was	just	observed,	man.
+
+function foo(){
+    var a = 0;
+    function bar(){
+        console.log(a);
+    }
+    baz(bar);
+}
+function baz(fn){
+    fn();
+}
+foo();
+
+var	fn;
+function foo(){
+    var	a = 2;
+	function baz() {
+        console.log(a);
+    }
+    fn = baz;	//	assign	`baz`	to	global	variable 
+}
+function bar() {
+    fn();	//	look	ma,	I	saw	closure! 
+}
+foo();
+bar();	//	2
+
+setTimeout(function timer(){
+    console.log( "Hello" );
+},1000);
+
+for	(var i=1; i<=5; i++) {
+    setTimeout(	function timer(){
+        console.log( i ); 
+    },	i*1000 );
+}
