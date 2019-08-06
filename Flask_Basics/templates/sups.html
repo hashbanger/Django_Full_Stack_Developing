@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Superheroes</title>
+</head>
+<body>
+    {% for s in superh %}
+    <li>{{s}}</li>
+    {% endfor %}
+
+    {% if 'Superman' in superh %}
+    <p>Superman is in there and he is the strongest of all</p>
+    {% else %}
+    <p> No one here is the greatest</p>
+    {% endif %}
+</body>
+</html>
